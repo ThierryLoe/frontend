@@ -21,11 +21,11 @@ export default {
   methods: {
     add: async function () {
       if (this.firstName != "" && this.lastName != "") {
-        let res = await axios.post(
+        await axios.post(
           `http://localhost:7071/api/user?firstname=${this.firstName}&lastname=${this.lastName}`
         );
-
-        this.users = res.data;
+        this.firstName = ""; 
+        this.lastName = "";
       }
     },
   },
