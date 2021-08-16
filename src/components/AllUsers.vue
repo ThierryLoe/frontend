@@ -2,7 +2,7 @@
   <div>
       <h1>Users</h1>
       <ul>
-          <li v-for="user in users" v-bind:key="user.personID">{{user.lastName}}{{user.firstName}}</li>
+          <li v-for="user in users" v-bind:key="user.personID">{{user.lastName}} {{user.firstName}}</li>
       </ul>
   </div>
 </template>
