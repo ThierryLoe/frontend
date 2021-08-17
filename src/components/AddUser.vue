@@ -1,6 +1,5 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
     <input type="text" placeholder="Vorname" v-model="firstName" />
     <input type="text" placeholder="Nachname" v-model="lastName" />
     <input type="submit" value="AddUser" v-on:click="add" :disabled="!checkInputs" />

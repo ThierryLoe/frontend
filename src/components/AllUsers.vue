@@ -2,13 +2,14 @@
   <div>
     <h1>Users</h1>
     <ul>
-      <li v-for="user in users" v-bind:key="user.personID">
-        {{ user.lastName }} {{ user.firstName }}
+      <li v-for="user in users" v-bind:key="user.personId"><a :href="'/updateuser/'+user.personId">
+        <div>User {{ user.lastName }} {{ user.firstName }}</div>
+        </a>
         <input
           type="button"
           value="Löschen"
           v-on:click="deleteUser(user.personId)"
-        />
+        />   
       </li>
     </ul>
   </div>
@@ -28,7 +29,6 @@ export default {
   },
   methods: {
     deleteUser: async function (id) {
-      console.log("hi");
       await axios.delete(`http://localhost:7071/api/user?id=${id}`);
       this.updateData();
     },
